@@ -1,6 +1,6 @@
 # TTTaaS
 
-*Tic-Tac-Toe-as-a-Service* is a (https://goa.design/)[Goa] Microservice
+*Tic-Tac-Toe-as-a-Service* is a [Goa](https://goa.design/) Microservice
 implementation.
 
 ## Requirements
