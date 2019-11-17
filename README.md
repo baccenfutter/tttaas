@@ -23,6 +23,13 @@ git clone https://github.com/baccenfutter/tttaas
 make all
 ```
 
+### Docker
+
+```bash
+docker build -t tttaas .
+docker run -it --rm tttaas
+```
+
 ## Usage
 
 Start the server:

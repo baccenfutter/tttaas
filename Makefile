@@ -1,10 +1,11 @@
 SHELL := /bin/bash
 
 .PHONY: all
-all: setup gen build
+all: setup gen install
 
 .PHONY: setup
 setup:
+	go get -u github.com/golang/protobuf/protoc-gen-go
 	go get -u goa.design/goa/v3
 	go get -u goa.design/goa/v3/...
 
@@ -13,7 +14,7 @@ gen:
 	goa gen github.com/baccenfutter/tictactoe/design
 	goa example github.com/baccenfutter/tictactoe/design
 
-.PHONY: build
-build:
-	go install ./cmd/tictactoe
-	go install ./cmd/tictactoe-cli
+.PHONY: install
+install:
+	CGO_ENABLED=0 GOOS=linux go install ./cmd/tictactoe
+	CGO_ENABLED=0 GOOS=linux go install ./cmd/tictactoe-cli
