@@ -55,7 +55,7 @@ var _ = Service("game", func() {
 			Field(7, "c1", String, "Field C1")
 			Field(8, "c2", String, "Field C2")
 			Field(9, "c3", String, "Field C3")
-			Field(10, "winner", String)
+			Field(10, "status", String)
 		})
 		Error("NotFound")
 
@@ -87,7 +87,7 @@ var _ = Service("game", func() {
 			Field(7, "c1", String, "Field C1")
 			Field(8, "c2", String, "Field C2")
 			Field(9, "c3", String, "Field C3")
-			Field(10, "winner", String)
+			Field(10, "status", String)
 		})
 		Error("NotFound")
 		Error("BadRequest")

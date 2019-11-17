@@ -55,7 +55,7 @@ func (s *gamesrvc) Move(ctx context.Context, p *game.MovePayload) (res *game.Mov
 	if err != nil {
 		if backend.IsGameOver(err) {
 			winner := err.Error()
-			res.Winner = &winner
+			res.Status = &winner
 			err = nil
 			boards.Delete(p.Board)
 		} else {
