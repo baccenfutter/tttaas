@@ -12,7 +12,7 @@ require (
 	goa.design/goa/v3 v3.0.7
 	golang.org/x/net v0.0.0-20191116160921-f9c825593386 // indirect
 	golang.org/x/sys v0.0.0-20191115151921-52ab43148777 // indirect
-	golang.org/x/tools v0.0.0-20191115202509-3a792d9c32b2 // indirect
+	golang.org/x/tools v0.0.0-20191116214431-80313e1ba718 // indirect
 	google.golang.org/genproto v0.0.0-20191115221424-83cc0476cb11 // indirect
 	google.golang.org/grpc v1.25.1
 	gopkg.in/yaml.v2 v2.2.5 // indirect
