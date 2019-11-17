@@ -36,6 +36,32 @@ func (s *gamesrvc) New(ctx context.Context) (res *game.NewResult, err error) {
 // Get obtains a board by its ID
 func (s *gamesrvc) Get(ctx context.Context, p *game.GetPayload) (res *game.GetResult, err error) {
 	res = &game.GetResult{}
+	result, ok := boards.Load(p.Board)
+	if !ok {
+		err = game.MakeNotFound(fmt.Errorf("board does not exist: %s", p.Board))
+		return
+	}
+	board := result.(*backend.Board)
+
+	// prepare output
+	a1 := string(board.OwnerOf(backend.A1))
+	a2 := string(board.OwnerOf(backend.A2))
+	a3 := string(board.OwnerOf(backend.A3))
+	b1 := string(board.OwnerOf(backend.B1))
+	b2 := string(board.OwnerOf(backend.B2))
+	b3 := string(board.OwnerOf(backend.B3))
+	c1 := string(board.OwnerOf(backend.C1))
+	c2 := string(board.OwnerOf(backend.C2))
+	c3 := string(board.OwnerOf(backend.C3))
+	res.A1 = &a1
+	res.A2 = &a2
+	res.A3 = &a3
+	res.B1 = &b1
+	res.B2 = &b2
+	res.B3 = &b3
+	res.C1 = &c1
+	res.C2 = &c2
+	res.C3 = &c3
 	return
 }
 
