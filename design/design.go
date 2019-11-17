@@ -43,6 +43,7 @@ var _ = Service("game", func() {
 		Description("Obtain a board by ID.")
 		Payload(func() {
 			Field(1, "board", String, "Board ID")
+			Required("board")
 		})
 		Result(func() {
 			Field(1, "a1", String, "Field A1")
