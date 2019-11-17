@@ -64,7 +64,8 @@ func (s *gamesrvc) Move(ctx context.Context, p *game.MovePayload) (res *game.Mov
 		}
 	}
 
-	// debug output
+	// make computer move
+	backend.MakeOptimalMove(board)
 	s.logger.Println(board)
 
 	// prepare output
