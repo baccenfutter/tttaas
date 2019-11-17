@@ -55,3 +55,7 @@ tictactoe-cli game get -board <id>
 ```bash
 tictactoe-clie game move -board <id> -square <square>
 ```
+
+## Game-Engine
+
+[![GoDoc](https://godoc.org/github.com/baccenfutter/tttaas/tictactoe?status.svg)](https://godoc.org/github.com/baccenfutter/tttaas/tictactoe)
