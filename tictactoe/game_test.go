@@ -16,6 +16,17 @@ var (
 		" ", " ", " ",
 		" ", " ", " ",
 	)
+
+	winningSets = [][]Square{
+		[]Square{A1, A2, A3},
+		[]Square{B1, B2, B3},
+		[]Square{C1, C2, C3},
+		[]Square{A1, B1, C1},
+		[]Square{A2, B2, C2},
+		[]Square{A3, B3, C3},
+		[]Square{A1, B2, C3},
+		[]Square{A3, B2, C1},
+	}
 )
 
 func TestNewBoard(t *testing.T) {
