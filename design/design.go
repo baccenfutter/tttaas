@@ -30,12 +30,43 @@ var _ = Service("game", func() {
 		})
 
 		HTTP(func() {
-			GET("/")
+			POST("/")
 			Response(StatusOK)
 		})
 
 		GRPC(func() {
 			Response(CodeOK)
+		})
+	})
+
+	Method("get", func() {
+		Description("Obtain a board by ID.")
+		Payload(func() {
+			Field(1, "board", String, "Board ID")
+		})
+		Result(func() {
+			Field(1, "a1", String, "Field A1")
+			Field(2, "a2", String, "Field A2")
+			Field(3, "a3", String, "Field A3")
+			Field(4, "b1", String, "Field B1")
+			Field(5, "b2", String, "Field B2")
+			Field(6, "b3", String, "Field B3")
+			Field(7, "c1", String, "Field C1")
+			Field(8, "c2", String, "Field C2")
+			Field(9, "c3", String, "Field C3")
+			Field(10, "winner", String)
+		})
+		Error("NotFound")
+
+		HTTP(func() {
+			GET("/{board}")
+			Response(StatusOK)
+			Response("NotFound", StatusNotFound)
+		})
+
+		GRPC(func() {
+			Response(CodeOK)
+			Response("NotFound", CodeNotFound)
 		})
 	})
 

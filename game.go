@@ -24,12 +24,18 @@ func NewGame(logger *log.Logger) game.Service {
 	return &gamesrvc{logger}
 }
 
-// Initialize a new board
+// New initialize a new board
 func (s *gamesrvc) New(ctx context.Context) (res *game.NewResult, err error) {
 	res = &game.NewResult{}
 	id := uuid.NewV4().String()
 	boards.Store(id, backend.NewBoard())
 	res.ID = id
+	return
+}
+
+// Get obtains a board by its ID
+func (s *gamesrvc) Get(ctx context.Context, p *game.GetPayload) (res *game.GetResult, err error) {
+	res = &game.GetResult{}
 	return
 }
 
